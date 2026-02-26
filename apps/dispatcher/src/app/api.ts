@@ -12,7 +12,7 @@ const TAG_TYPES = ["Users"] as const;
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: "/api",
+    baseUrl: "/",
   }),
   tagTypes: TAG_TYPES,
   endpoints: () => ({}),
