@@ -1,0 +1,30 @@
+{
+  "name": "@fuel-me/site-manager",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3000",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fuel-me/shared-types": "workspace:*",
+    "@fuel-me/shared-utils": "workspace:*",
+    "@fuel-me/ui": "workspace:*",
+    "@reduxjs/toolkit": "^2.11.2",
+    "react": "^19",
+    "react-dom": "^19",
+    "react-redux": "^9.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vite": "^6"
+  }
+}

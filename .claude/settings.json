@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(command:*migration*)",
+      "Read(file_path:*.env*)",
+      "Edit(file_path:*.env*)",
+      "Write(file_path:*.env*)",
+      "Bash(command:*cat*.env*)",
+      "Bash(command:*.env*)"
+    ]
+  }
+}
