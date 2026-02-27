@@ -1,8 +1,8 @@
 import { Button } from "@fuel-me/ui";
-import { useGetUsersQuery } from "./features/users/services";
+import { useGetHealthQuery } from "./services/health";
 
 export function App() {
-  const { data: users, isLoading, error, refetch } = useGetUsersQuery();
+  const { data: health, isLoading, error, refetch } = useGetHealthQuery();
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
@@ -13,35 +13,22 @@ export function App() {
         <p className="mb-8 text-gray-500">Fuel.me Management Dashboard</p>
 
         <div className="rounded-xl bg-white p-6 shadow-sm">
-          <h2 className="mb-4 text-lg font-semibold">Users</h2>
+          <h2 className="mb-4 text-lg font-semibold">API Health Check</h2>
 
           {error && (
-            <p className="mb-4 text-red-600">Failed to load users</p>
+            <p className="mb-4 text-red-600">Failed to reach the API</p>
           )}
 
-          {isLoading && <p className="text-gray-400">Loading...</p>}
+          {isLoading && <p className="text-gray-400">Checking...</p>}
 
-          {users && (
+          {health && (
             <div className="space-y-2 text-sm">
-              {users.length === 0 && (
-                <p className="text-gray-400">No users yet</p>
-              )}
-              {users.map((user) => (
-                <div
-                  key={user.id}
-                  className="flex items-center justify-between rounded-lg bg-gray-50 p-3"
-                >
-                  <div>
-                    <p className="font-medium">
-                      Hello World, the API is working!
-                    </p>
-                    <p className="text-gray-500">{user.email}</p>
-                  </div>
-                  <span className="rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-700">
-                    {user.role}
-                  </span>
-                </div>
-              ))}
+              <p className="text-lg font-medium text-green-600">
+                Hello World, the API is working!
+              </p>
+              <p className="text-gray-500">
+                Database: {health.database.connected ? "Connected" : "Disconnected"}
+              </p>
             </div>
           )}
 
