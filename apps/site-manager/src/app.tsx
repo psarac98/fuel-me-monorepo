@@ -33,7 +33,7 @@ export function App() {
                 >
                   <div>
                     <p className="font-medium">
-                      {user.firstName} {user.lastName}
+                      Hello World, the API is working!
                     </p>
                     <p className="text-gray-500">{user.email}</p>
                   </div>
